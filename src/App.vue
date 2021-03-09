@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <!-- <div>
     导航栏|
-    <router-link to="/">hi</router-link> |
-    <router-link to="xxx">hello</router-link>
+    <router-link to="/">home</router-link> |
+    <router-link to="/doc">文档</router-link>
   </div>
-  <hr/>
+  <hr/> -->
   <router-view/>
 </template>
 
@@ -17,3 +17,6 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+</style>
