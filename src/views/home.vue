@@ -2,8 +2,11 @@
   <div>
     home页面
     <div class="topnav">
-      <div class="logo"></div>
-      <div class="menu"></div>
+      <div class="logo">LOGO</div>
+      <ul class="menu">
+        <li>菜单1</li>
+        <li>菜单2</li>
+      </ul>
     </div>
     <div class="banner">
       <h1>轻UI</h1>
@@ -22,6 +25,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang='scss' scoped>
+  .topbar{border: 1px solid red;}
 </style>
