@@ -1,13 +1,7 @@
 <template>
   <div>
     home页面
-    <div class="topnav">
-      <div class="logo">LOGO</div>
-      <ul class="menu">
-        <li>菜单1</li>
-        <li>菜单2</li>
-      </ul>
-    </div>
+    <topnav/>
     <div class="banner">
       <h1>轻UI</h1>
       <h2>一款轻量级的UI库</h2>
@@ -20,7 +14,9 @@
 </template>
 
 <script>
+import Topnav from '../components/Topnav.vue'
 export default {
+  components: { Topnav },
   name:'Home'
 }
 </script>
