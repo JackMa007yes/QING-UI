@@ -1,16 +1,19 @@
 <template>
-  <div>
     <p>Switch 的文档</p>
-    <Switch/>
-  </div>
-
+    <Switch :value='y' @input="y = $event" />
 </template>
 
 <script>
+import { ref } from 'vue'
 import Switch from '../lib/Switch.vue'
+
 export default {
   components: { Switch },
-  name:'SwitchDemo'
+  name:'SwitchDemo',
+  setup(){
+    const y = ref(true)
+    return {y}
+  }
 }
 </script>
 
