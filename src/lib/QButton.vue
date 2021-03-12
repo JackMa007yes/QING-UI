@@ -1,10 +1,12 @@
 <template>
-  dialog
+  <button>
+    <slot/>
+  </button>
 </template>
 
 <script>
 export default {
-  name:'DialogDemo'
+  name:'button'
 }
 </script>
 

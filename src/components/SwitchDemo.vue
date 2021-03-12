@@ -1,18 +1,18 @@
 <template>
     <p>Switch 的文档</p>
-    <Switch :value='y' @input="y = $event" />
+    <q-switch v-model:value='bool'  />
 </template>
 
 <script>
 import { ref } from 'vue'
-import Switch from '../lib/Switch.vue'
+import QSwitch from '../lib/QSwitch.vue'
 
 export default {
-  components: { Switch },
+  components: { QSwitch },
   name:'SwitchDemo',
   setup(){
-    const y = ref(true)
-    return {y}
+    const bool = ref(true)
+    return {bool}
   }
 }
 </script>

@@ -10,7 +10,6 @@
 <script>
 export default {
   name:'Switch',
-  emits:['input'],
   props:{
     value:{
       type:[Boolean,String],
@@ -19,7 +18,7 @@ export default {
   },
   setup(props,context){
     const toggle = () => {
-      context.emit('input',!props.value)
+      context.emit('update:value',!props.value)
     }
     return {toggle}
   }

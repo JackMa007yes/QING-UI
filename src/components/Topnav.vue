@@ -13,7 +13,7 @@
 import { inject } from 'vue'
 
 export default {
-  name:'TopNav',
+  name:'TopNavDemo',
   setup(){
     const menuVisible = inject('xxx')
     const toggleMenu = () => {
