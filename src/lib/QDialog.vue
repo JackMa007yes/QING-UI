@@ -59,9 +59,6 @@ export default {
         close()
       }
     }
-    console.log(props.ok())
-    console.log(props.cancel())
-
     const cancel = () => {
       if(props.cancel && props.cancel() !== false){
         close()
