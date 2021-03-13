@@ -3,6 +3,8 @@
   <h1>示例一</h1>
   <q-button @click="toggle">toggle</q-button>
   <q-dialog v-model:visible="x" :closeOnclickOverlay="false" :ok='f1' :cancel='f2'>
+    <p>jjjjjj</p>
+    <p>hhhhhh</p>
   </q-dialog>
 </template>
 

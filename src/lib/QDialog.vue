@@ -1,20 +1,21 @@
 <template>
   <div  v-if="visible">
-    <div class="q-dialog-overlay" @click.self="onclickOverlay">
-      <div class="q-dialog-wrapper">
-        <div class="q-dialog">
-          <header>标题<span class="q-dialog-close" @click="close"></span></header>
-          <main>
-            <p>第一行字</p>
-            <p>第二行字</p>
-          </main>
-          <footer>
-            <q-button @click="ok">OK</q-button>
-            <q-button @click="cancel">Cancel</q-button>
-          </footer>
+    <Teleport to='body'>
+      <div class="q-dialog-overlay" @click.self="onclickOverlay">
+        <div class="q-dialog-wrapper">
+          <div class="q-dialog">
+            <header>{{title}}<span class="q-dialog-close" @click="close"></span></header>
+            <main>
+              <slot/>
+            </main>
+            <footer>
+              <q-button @click="ok">OK</q-button>
+              <q-button @click="cancel">Cancel</q-button>
+            </footer>
+          </div>
         </div>
       </div>
-    </div>
+    </Teleport>
   </div>
 
 </template>
@@ -38,8 +39,11 @@ export default {
     },
     cancel:{
       type:Function
+    },
+    title:{
+      type:String,
+      default:"提示"
     }
-
   },
   setup(props,context){
     const close = () => {
