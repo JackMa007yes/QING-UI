@@ -1,15 +1,20 @@
 <template>
   <div class="topnav">
-    <div class="logo">
-      <svg class="icon">
-        <use xlink:href="#icon-yun"></use>
-      </svg>
-    </div>
+    <router-link to="/">
+      <div class="logo">
+        <svg class="icon">
+          <use xlink:href="#icon-yun"></use>
+        </svg>
+      </div>
+    </router-link>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <router-link to="/doc">文档</router-link>
     </ul>
-    <span class="toggle-aside" @click='toggleMenu'></span>
+    <span class="toggle-aside" @click='toggleMenu' v-if="toggleMenuButtonVisible" >
+      <svg class="icon vue">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
+    </span>
   </div>
 </template>
 
@@ -18,6 +23,12 @@ import { inject } from 'vue'
 
 export default {
   name:'TopNavDemo',
+  props:{
+    toggleMenuButtonVisible:{
+      type:Boolean,
+      default:false
+    }
+  },
   setup(){
     const menuVisible = inject('xxx')
     const toggleMenu = () => {
@@ -41,7 +52,7 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
-  > .logo {
+   .logo {
     color: $green;
     max-width: 6em;
     margin-right: auto;
@@ -56,6 +67,12 @@ export default {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 40px;
+    transform: translateY(-50%);
+    top: 50%;
     > li {
       margin: 0 1em;
     }
@@ -64,16 +81,18 @@ export default {
     display: inline-block;
     width: 24px;
     height: 24px;
-    border: 1px solid red;
-    background-color: #fff;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
   @media(max-width:600px) {
-    > .menu {display: none;}
+     .menu {display: none;}
     > .logo {margin: 0 auto;}
     > .toggle-aside {display: inline-block;}
   }

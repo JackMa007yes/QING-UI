@@ -2,22 +2,31 @@
   <div>
     <topnav/>
       <div class="layout">
-        <Topnav class="nav" />
+        <Topnav class="nav" toggleMenuButtonVisible='true'/>
         <div class="content" >
           <aside v-if="menuVisible">
             <h2>组件列表</h2>
             <ol>
               <li>
-                <router-link to="/doc/switch">Switch 组件</router-link>
+                <router-link tag="div"  to="/doc/intro">介绍</router-link>
+              </li> 
+              <li> 
+                <router-link tag="div" to="/doc/install">安装</router-link>
               </li>
               <li>
-                <router-link to="/doc/button">Button 组件</router-link>
+                <router-link tag="div" to="/doc/getstart">起步</router-link>
+              </li>  
+              <li>
+                <router-link tag="div" to="/doc/switch">Switch 组件</router-link>
               </li>
               <li>
-                <router-link to="/doc/Dialog">Dialog 组件</router-link>
+                <router-link tag="div" to="/doc/button">Button 组件</router-link>
               </li>
               <li>
-                <router-link to="/doc/tabs">Tabs 组件</router-link>            
+                <router-link tag="div" to="/doc/Dialog">Dialog 组件</router-link>
+              </li>
+              <li>
+                <router-link tag="div" to="/doc/tabs">Tabs 组件</router-link>            
               </li>
             </ol>
           </aside>
@@ -85,10 +94,16 @@ export default {
   > ol {
     > li {
       padding: 4px 0;
+      text-decoration: none;
     }
   }
 }
 main {
   overflow: auto;
+}
+.router-link-active {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: underline;
 }
 </style>
