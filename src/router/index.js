@@ -5,10 +5,13 @@ import SwitchDemo from '../components/SwitchDemo.vue'
 import ButtonDemo from '../components/buttonDEmo.vue'
 import DialogDemo from '../components/dialogDemo.vue'
 import TabsDemo from '../components/tabsDemo.vue'
+import InputDemo from '../components/InputDemo.vue'
+
 import DocDemo from '../components/Docdemo.vue'
 import Introduce from '../views/Introduce.vue'
 import GetStart from '../views/GetStart.vue'
 import Install from '../views/Install.vue'
+
 
 
 
@@ -28,6 +31,8 @@ const router = createRouter({
       {path:'button',component:ButtonDemo},
       {path:'dialog',component:DialogDemo},
       {path:'tabs',component:TabsDemo},
+      {path:'input',component:InputDemo},
+
     ]}
     
   ]

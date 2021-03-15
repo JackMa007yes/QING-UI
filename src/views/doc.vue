@@ -2,7 +2,7 @@
   <div>
     <topnav/>
       <div class="layout">
-        <Topnav class="nav" toggleMenuButtonVisible='true'/>
+        <Topnav class="nav" toggleMenuButtonVisible/>
         <div class="content" >
           <aside v-if="menuVisible">
             <h2>组件列表</h2>
@@ -27,6 +27,9 @@
               </li>
               <li>
                 <router-link tag="div" to="/doc/tabs">Tabs 组件</router-link>            
+              </li>
+              <li>
+                <router-link tag="div" to="/doc/input">input 组件</router-link>            
               </li>
             </ol>
           </aside>
@@ -76,7 +79,7 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    // background: lightgreen;
   }
 }
   aside {
