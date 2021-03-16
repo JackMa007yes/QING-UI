@@ -6,6 +6,8 @@ import ButtonDemo from '../components/buttonDEmo.vue'
 import DialogDemo from '../components/dialogDemo.vue'
 import TabsDemo from '../components/tabsDemo.vue'
 import InputDemo from '../components/InputDemo.vue'
+import ToastDemo from '../components/ToastDemo.vue'
+
 
 import DocDemo from '../components/Docdemo.vue'
 import Introduce from '../views/Introduce.vue'
@@ -32,6 +34,8 @@ const router = createRouter({
       {path:'dialog',component:DialogDemo},
       {path:'tabs',component:TabsDemo},
       {path:'input',component:InputDemo},
+      {path:'toast',component:ToastDemo},
+
 
     ]}
     

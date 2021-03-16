@@ -29,8 +29,11 @@
                 <router-link tag="div" to="/doc/tabs">Tabs 组件</router-link>            
               </li>
               <li>
-                <router-link tag="div" to="/doc/input">input 组件</router-link>            
+                <router-link tag="div" to="/doc/input">Input 组件</router-link>            
               </li>
+              <li>
+                <router-link tag="div" to="/doc/toast">Toast 组件</router-link>            
+              </li>              
             </ol>
           </aside>
           <main>
