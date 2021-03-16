@@ -13,7 +13,7 @@ export default {
     // const Toast = useToast()
     const {proxy} = getCurrentInstance()
     const showToast = () => {
-      proxy.$toast.methods.show('kkkkkk',2000)
+      proxy.$toast.show('kkkkkk',2000)
     }
     return {showToast}
   },
