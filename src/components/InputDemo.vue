@@ -14,6 +14,7 @@
 <script>
 import QInput from '../lib/QInput.vue'
 export default {
+  name:'InputDemo',
   components: { QInput },
   data(){
     return {

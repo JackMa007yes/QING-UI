@@ -2,14 +2,14 @@ import {createRouter, createWebHashHistory} from 'vue-router'
 import Home from '../views/home.vue'
 import Doc from '../views/doc.vue';
 import SwitchDemo from '../components/SwitchDemo.vue'
-import ButtonDemo from '../components/buttonDEmo.vue'
-import DialogDemo from '../components/dialogDemo.vue'
-import TabsDemo from '../components/tabsDemo.vue'
+import ButtonDemo from '../components/ButtonDemo.vue'
+import DialogDemo from '../components/DialogDemo.vue'
+import TabsDemo from '../components/TabsDemo.vue'
 import InputDemo from '../components/InputDemo.vue'
 import ToastDemo from '../components/ToastDemo.vue'
 
 
-import DocDemo from '../components/Docdemo.vue'
+import DocDemo from '../components/DocDemo.vue'
 import Introduce from '../views/Introduce.vue'
 import GetStart from '../views/GetStart.vue'
 import Install from '../views/Install.vue'
