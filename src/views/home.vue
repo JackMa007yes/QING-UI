@@ -3,11 +3,11 @@
     <div class="topnavAndBanner">
       <topnav/>
       <div class="banner">
-        <h1>轻UI</h1>
-        <h2>一款轻量级的UI库</h2>
+        <h1>QING-UI</h1>
+        <h2>一款基于Vue3的轻量级UI库</h2>
         <p class="actions">
-          <a href="https://github.com">Github</a>
-          <router-link to="doc">开始</router-link>
+          <a href="https://github.com" class="github">Github</a>
+          <router-link to="doc" class="start">开始</router-link>
         </p>
       </div>
     </div>
@@ -46,31 +46,59 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-  $green:#02bcb0;
-  $color:#28d1c9;
+  $color:rgb(121,82,179);
   .topnavAndBanner {
     background: linear-gradient(135deg, rgba(227,255,253,1) 0%, rgba(183,233,230,1) 100%);
-    clip-path: ellipse(80% 60% at 50% 40%);
+    // clip-path: ellipse(80% 60% at 50% 40%);
   }
   .banner {
-    padding: 100px 0;
+    margin-top: 50px;
+    padding: 90px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: $green;
+    color: rgb(33,37,41);
+    background-color: rgb(247,245,251);
+    background: linear-gradient(to right bottom, #f7f5fb 50%, #fff 50%);
+    h1 {
+      margin-top: 50px;
+      font-weight: 500;
+      font-family:Arial;
+      font-size: 50px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+   
     > .actions{
       padding: 8px 0;
-      a {
-        margin:0 8px;
-        background: $green;
+      margin:0 8px;
+      >* {
         display: inline-block;
-        $h: 28px;
-        color: #fff;
+        width: 100px;
+        text-align: center;
+        padding: 8px ;
+        border: 2px solid $color;
         border-radius: 4px;
-        padding: 8px 24px;
+        margin: 2px;
         &:hover {
           text-decoration: none;
+        }  
+      }
+      .github {
+        background-color: white;
+      }
+      .start {
+        background-color: $color;
+        color: white;
+      }
+      @media (max-width:500px){
+        display:flex;
+        flex-direction: column;
+        >*{
+          width: 250px;
         }
       }
     }

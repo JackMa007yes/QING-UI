@@ -1,6 +1,6 @@
 <template>
   <div>
-    <topnav/>
+    <topnav class="topnav"/>
       <div class="layout">
         <Topnav class="nav" toggleMenuButtonVisible/>
         <div class="content" >
@@ -14,7 +14,7 @@
                 <router-link tag="div" to="/doc/install">安装</router-link>
               </li>
               <li>
-                <router-link tag="div" to="/doc/getstart">起步</router-link>
+                <router-link tag="div" to="/doc/getstart">开始使用</router-link>
               </li>  
               <li>
                 <router-link tag="div" to="/doc/switch">Switch 组件</router-link>
@@ -33,11 +33,14 @@
               </li>
               <li>
                 <router-link tag="div" to="/doc/toast">Toast 组件</router-link>            
-              </li>              
+              </li>     
+              <li>
+                <router-link tag="div" to="/doc/collapse">Collapse 组件</router-link>            
+              </li>                
             </ol>
           </aside>
-          <main>
-            <router-view/>
+          <main @click="closeMenu">
+              <router-view/>
           </main>
         </div>
       </div>
@@ -51,13 +54,28 @@ export default {
   components: { Topnav },
   setup(){
     const menuVisible = inject('xxx')
-    return {menuVisible}
+    const closeMenu =() => {
+      const width = window.innerWidth
+      if(width<500){
+        if(menuVisible.value){
+          menuVisible.value = false
+        }
+      }
+    }
+    return {menuVisible,closeMenu}
   },
   name:'Doc'
 }
 </script>
 
 <style lang="scss" scoped>
+  @keyframes iin {
+    from {width: 0;}
+    to {width: 150px;}
+  }
+  .topnav{
+    z-index: 29;
+  }
   .layout {
   display: flex;
   flex-direction: column;
@@ -86,7 +104,10 @@ export default {
   }
 }
   aside {
-  background: lightblue;
+  animation: iin 1s;
+  background: white;
+  border-right: 2px solid grey;
+  background-color: rgb(247,245,251);
   width: 150px;
   padding: 16px;
   position: fixed;
@@ -94,12 +115,14 @@ export default {
   left: 0;
   padding-top: 70px;
   height: 100%;
+  z-index: 28;
   > h2 {
     margin-bottom: 4px;
+    font-weight: 600;
   }
   > ol {
     > li {
-      padding: 4px 0;
+      padding: 8px 0;
       text-decoration: none;
     }
   }
@@ -108,7 +131,7 @@ main {
   overflow: auto;
 }
 .router-link-active {
-  font-size: 20px;
+  // font-size: 20px;
   font-weight: 600;
   text-decoration: underline;
 }

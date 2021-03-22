@@ -1,10 +1,10 @@
 <template>
   <div class="q-input" :class="{'error':error!==''}">
-    <input :value='value' 
+    <input :value='modelValue' 
       :disabled='disabled' 
       :readonly='readonly' 
-      @input="$emit('update:value',$event.target.value)" 
-      @change="$emit('update:value',$event.target.value)" 
+      @input="$emit('update:modelValue',$event.target.value)" 
+      @change="$emit('update:modelValue',$event.target.value)" 
       type="text">
     <svg class="icon" v-if="error">
       <use xlink:href="#icon-tishi"></use>
@@ -19,7 +19,7 @@ export default {
   components: { QButton },
   name:'QInput',
   props:{
-    value:{
+    modelValue:{
       type:String,
       default:''
     },

@@ -1,6 +1,6 @@
 <template>
-  <button class="qbutton" :class="classes" :disabled='disabled' >
-    <span v-if="loading" class="q-loading-indicator"></span>
+  <button class="q-button" :class="classes" :disabled='disabled' >
+    <span v-if="loading" class="q-loadingIndicator"></span>
     <slot/>
   </button>
 </template>
@@ -44,9 +44,11 @@ export default {
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: #40a9ff;
+$blue: rgb(121,82,179);
 $radius: 4px;
-.qbutton {
+$red: red;
+$grey: grey;
+.q-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -60,8 +62,9 @@ $radius: 4px;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 250ms;
   & + & {
-  margin-left: 8px;
+    margin-left: 8px;
   }
   &:hover,
   &:focus {
@@ -71,34 +74,113 @@ $radius: 4px;
   &:focus {
     outline: none;
   }
-  &.q-theme-button,
-  &.q-theme-text,
+  &::-moz-focus-inner {
+    border: 0;
+  }
   &.q-theme-link {
-    &.q-size-big{
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px
-    }
-    &.q-size-small{
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
     }
   }
-  > .q-loading-indicator{
-    display: inline-block;
+  &.q-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
+  &.q-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.q-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
+  &.q-theme-button {
+    &.q-level-main {
+      background: $blue;
+      color: white;
+      border-color: $blue;
+      &:hover,
+      &:focus {
+        background: darken($blue, 10%);
+        border-color: darken($blue, 10%);
+      }
+    }
+    &.q-level-danger {
+      background: $red;
+      border-color: $red;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($red, 10%);
+        border-color: darken($red, 10%);
+      }
+    }
+  }
+  &.q-theme-link {
+    &.q-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.q-theme-text {
+    &.q-level-main {
+      color: $blue;
+      &:hover,
+      &:focus {
+        color: darken($blue, 10%);
+      }
+    }
+    &.q-level-danger {
+      color: $red;
+      &:hover,
+      &:focus {
+        color: darken($red, 10%);
+      }
+    }
+  }
+  &.q-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.q-theme-link, &.q-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+  > .q-loadingIndicator{
     width: 14px;
     height: 14px;
-    // background-color: $blue;
-    border-radius: 8px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px; 
+    border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    border-color: $blue $blue $blue transparent;
-    animation: s-spin 1s infinite linear;
+    animation: gulu-spin 1s infinite linear;
   }
-  @keyframes s-spin {
-    0%{transform: rotate(0deg)}
-    100%{transform: rotate(360deg)}
-  }
+}
+@keyframes gulu-spin {
+  0%{transform: rotate(0deg)} 
+  100%{transform: rotate(360deg)} 
 }
 </style>

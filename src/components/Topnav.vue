@@ -40,8 +40,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-  $green:#02bcb0;
-  $color:#28d1c9;
   .topnav {
   display: flex;
   padding: 16px;
@@ -52,8 +50,10 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
+  height: 50px;
+  background-color: rgb(121,82,179);
    .logo {
-    color: $green;
+    color: white;
     max-width: 6em;
     margin-right: auto;
     >svg {
@@ -63,7 +63,7 @@ export default {
     }
   }
   > .menu {
-    color: $green;
+    color: white;
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;

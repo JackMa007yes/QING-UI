@@ -1,17 +1,18 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
 import Home from '../views/home.vue'
 import Doc from '../views/doc.vue';
-import SwitchDemo from '../components/SwitchDemo.vue'
-import ButtonDemo from '../components/ButtonDemo.vue'
-import DialogDemo from '../components/DialogDemo.vue'
-import TabsDemo from '../components/TabsDemo.vue'
-import InputDemo from '../components/InputDemo.vue'
-import ToastDemo from '../components/ToastDemo.vue'
+import SwitchDemo from '../components/switchdemo/SwitchDemo.vue'
+import ButtonDemo from '../components/buttondemo/ButtonDemo.vue'
+import DialogDemo from '../components/dialogdemo/DialogDemo.vue'
+import TabsDemo from '../components/tabsdemo/TabsDemo.vue'
+import InputDemo from '../components/inputdemo/InputDemo.vue'
+import ToastDemo from '../components/toastdemo/ToastDemo.vue'
+import CollapseDemo from '../components/callapsedemo/CollapseDemo.vue'
 
 
-import DocDemo from '../components/DocDemo.vue'
+// import DocDemo from '../components/DocDemo.vue'
 import Introduce from '../views/Introduce.vue'
-import GetStart from '../views/GetStart.vue'
+import GetStart from '../views/getStart.vue'
 import Install from '../views/Install.vue'
 
 
@@ -25,7 +26,7 @@ const router = createRouter({
   routes: [
     {path:'',component: Home},
     {path:'/doc',component: Doc,children:[
-      {path:'/',component:DocDemo},
+      {path:'',redirect:'/doc/intro'},
       {path:'intro',component:Introduce},
       {path:'getstart',component:GetStart},
       {path:'install',component:Install},
@@ -35,8 +36,7 @@ const router = createRouter({
       {path:'tabs',component:TabsDemo},
       {path:'input',component:InputDemo},
       {path:'toast',component:ToastDemo},
-
-
+      {path:'collapse',component:CollapseDemo},
     ]}
     
   ]

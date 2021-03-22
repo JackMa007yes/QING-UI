@@ -1,18 +1,27 @@
 import Toast from './QToast.vue'
-import { createApp, h, inject, provide, reactive } from 'vue'
+import { createApp, h } from 'vue'
 
-const QToast = {} 
+let toastVM,div
 
-QToast.install = (app) => {
-  const toastVM = createApp({
+export const showToast = (options) => {
+
+  const {message,autoClose,autoCloseDelay,closeButton,position} = options
+
+  if(toastVM){
+    removeToast()
+  }
+  toastVM = createApp({
     render(){
-      return h(Toast)
+      return h(Toast, {message,autoClose,autoCloseDelay,closeButton,position})
     }
   })
-  const div = document.createElement('div')
+  div = document.createElement('div')
   document.body.appendChild(div)
   toastVM.mount(div)
-  app.config.globalProperties.$toast = toastVM
+}
+ 
+export const removeToast = () => {
+  toastVM.unmount(div)
+  div.remove()
 }
 
-export default QToast

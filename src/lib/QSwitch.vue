@@ -1,24 +1,21 @@
 <template>
-    <button class="q-switch" :class="{'q-checked':value}" @click="toggle">
+    <button class="q-switch" :class="{'q-checked':modelValue}" @click="toggle">
       <span></span>
     </button>
-    <div>
-      {{value}}
-    </div>
 </template>
 
 <script>
 export default {
   name:'Switch',
   props:{
-    value:{
+    modelValue:{
       type:[Boolean,String],
       default:true
     }
   },
   setup(props,context){
     const toggle = () => {
-      context.emit('update:value',!props.value)
+      context.emit('update:model-value',!props.modelValue)
     }
     return {toggle}
   }
@@ -47,7 +44,7 @@ export default {
     border-radius: $h2 / 2;
     transition: left 0.25s;
   }
-  .q-checked { background-color: blue;}
+  .q-checked { background-color: rgb(121,82,179);}
   .q-checked > span {
     left: calc(100% - #{$h2} - 2px);
   }

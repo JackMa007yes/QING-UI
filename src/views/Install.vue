@@ -6,7 +6,7 @@
     <p>或</p>
     <pre><code>yarn add qing-ui</code></pre>
     <p>
-      下一节：<a href="#/doc/get-start">开始使用</a>
+      下一节：<a href="#/doc/getstart">开始使用</a>
     </p>
   </div>
 </template>
