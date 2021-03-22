@@ -6,7 +6,7 @@
         <h1>QING-UI</h1>
         <h2>一款基于Vue3的轻量级UI库</h2>
         <p class="actions">
-          <a href="https://github.com" class="github">Github</a>
+          <a href="https://github.com/JackMa007yes/QING-UI" class="github">Github</a>
           <router-link to="doc" class="start">开始</router-link>
         </p>
       </div>
