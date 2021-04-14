@@ -107,13 +107,8 @@ export default {
       transform: translate(-50%,-50%);
     }
     &.qtoast-position-bottom {
-      animation: fade-up 1s;
       bottom: 0;
       transform: translateX(-50%);
     }
-    @keyframes fade-up {
-    0% { opacity: 0;transform: translateY(0%);}
-    100% {opacity: 1;transform: translateY(-100%);}
-   }
   }
 </style>
